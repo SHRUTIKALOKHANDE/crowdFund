@@ -1,61 +1,62 @@
-import React from 'react';
+import React from "react";
 import { withRouter } from "react-router";
-//import data from '../data/data';
-import './Home.css';
-import Header from './Header';
-import ParentCard from './ParentCard';
-import Bookmark from './Bookmark';
-import ProgressC from './Progress';
-import ModalC from './ModalC';
-class Home extends React.Component{
-    constructor(props){
-        super(props);
-        this.projectDetails = {
-            backed: 89914,
-            total_backers: 5007,
-            days_left: 56
-        };
-        this.state = {
-            visible : false,
-        };
-    }
-    handleClick = () => {
+import data from "../data/data";
+import "./Home.css";
+import Header from "./Header";
+import ParentCard from "./ParentCard";
+import Bookmark from "./Bookmark";
+import ProgressC from "./Progress";
+import Model from "./Model";
+import { Col } from "antd";
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.infos = data;
+    this.projectDetails = {
+      backed: 89914,
+      total_backers: 5007,
+      days_left: 56,
+    };
+    this.state = {
+      setVisible: false,
+      visible: true,
+    };
+  }
+  handleClick = () => {
     this.setState({
-        visible:true,
-    }); 
-    console.log("Button clicked",this.state.visible);   
-    }
-    
-    hideModal= () => this.setState({visible: false});
- 
-    render() {
-        return (
-            
-            <>
-                <div className = "home-container">
-                    <Header/>
-                </div>
-                <div className = "home-bookmark">
-                    <img className = "mastercraft-icon" src="logo-mastercraft.svg" alt="mastercraft-icon" />
-                    <Bookmark />
-                </div>
-                <div className = "home-progress">
-                    <ProgressC projectDetails = {this.projectDetails}/>
-                </div>
-                <div className = "card-container">
-                    <ParentCard handleClick = {this.handleClick}/>
-                </div>
-                <div className = "home-modal">
-                    {this.state.visible && (
-                        <ModalC 
-                        isVisible = {this.state.visible} 
-                        hideModal= {this.hideModal}
-                        />
-                    )}  
-                </div>
-            </>
-        );
-    }
+      setVisible: true,
+    });
+    console.log("Button clicked", this.state.visible);
+  };
+
+  hideModal = () => this.setState({ visible: false });
+
+  getElement = (info) => {
+    return <Model history={this.props.push} info={info} />;
+  };
+
+  render() {
+    return (
+      <>
+        <div className="home-container">
+          <Header />
+        </div>
+        <Col xs={24} xl={24}>
+          <div className = "home-content">
+            <Bookmark />
+            <ProgressC projectDetails={this.projectDetails} />
+            <ParentCard handleClick={this.handleClick} />
+          </div>
+        </Col>
+        {/* <div className="home-modal">
+          {this.infos.map((info) => this.getElement(info))}
+        </div>
+        <div>
+          {this.state.setVisible && <ModalC visible={this.state.visible} />}
+        </div> */}
+      </>
+    );
+  }
 }
 
 export default withRouter(Home);

@@ -15,19 +15,17 @@ export default class Header extends React.Component {
 
         {/* Display links based on if the user's logged in or not */}
         <div className="header-action">
-          
-            <div className="header-link" onClick={this.root}>
-                About
-            </div>
+          <div className="header-link" onClick={this.root}>
+            About
+          </div>
 
-            <div className="header-link" onClick={this.root}>
-                Discover
-            </div>
-        
-            <div className="header-link" onClick={this.root}>
-                Get Started
-            </div>
-            
+          <div className="header-link" onClick={this.root}>
+            Discover
+          </div>
+
+          <div className="header-link" onClick={this.root}>
+            Get Started
+          </div>
         </div>
       </div>
     );

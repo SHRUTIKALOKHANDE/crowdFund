@@ -13,7 +13,7 @@ class ModalC extends React.Component {
   render() {
     const shouldBeVisible = this.props.isVisible;
     return (
-
+      <div className = "modal-container">
         <Modal
           title="Modal 1000px width"
           centered
@@ -21,11 +21,13 @@ class ModalC extends React.Component {
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           width={1000}
+          height = {70}
         >
           <p>some contents...</p>
           <p>some contents...</p>
           <p>some contents...</p>
         </Modal>
+      </div>
       
     ); 
   }

@@ -1,77 +1,26 @@
 body{
   background: whitesmoke;
+  margin:0px;
+  padding: 0px;
 }
 .home-container{
   background-image: url("../images/image-hero-desktop.jpg");
   /* Set a specific height */
   height: 50vh;
   width: 100vw;
-  /* Position and center the image to scale nicely on all screens */
-  /* overflow: hidden; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   z-index:2;
 }
-.home-bookmark {
-  display: flex;
-  /* flex-direction: column; */
-  position: relative; 
-  justify-content: center;
-  align-items: center;
-  /* overflow:visible; */
-  width: 40%;
-  height: 30vh;
-  margin-top: -10vh;
-  padding: 0.50em 0em;
-  margin-left:30%;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
-  background: white;
-  z-index:2;
-}
-.mastercraft-icon{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: -17vh;
-  left:45%; 
-  position: relative;
-}
-.home-progress {
-  display: flex;
-  /* flex-direction: column; */
-  /* position: absolute; */
-  justify-content: center;
-  align-items: center;
-  overflow:hidden;
-  width: 40%;
-  height: 30vh;
-  margin-top: 20px;
-  padding: 0.50em 0em;
-  margin-left:30%;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
-  background: white;
-}
-.card-container {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  min-height: calc(100vh - 170px);
-  margin-top: 20px;
-  padding: 1.5em 0em;
-  margin-left:30%;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
-  background: white;
+.home-content{
+  width:40%;
+  margin:auto;
 }
 .home-modal{
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   width: 40%;
@@ -82,5 +31,12 @@ body{
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   border: 1px solid white;
   background: white;
+
+}
+.home-model{
+  display: block;
+  justify-content: center;
+  height: 20em;
+  width:30%;
 
 }
