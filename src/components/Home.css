@@ -1,5 +1,5 @@
 body{
-  background: whitesmoke;
+  background:whitesmoke;
   margin:0px;
   padding: 0px;
 }
@@ -39,4 +39,21 @@ body{
   height: 20em;
   width:30%;
 
+}
+
+@media screen and (max-width: 
+  768px){
+    .home-container{
+      background-image: url("../images/image-hero-mobile.jpg");
+      height: 50vh;
+      width: 100vw;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      z-index:2;
+    }
+    .home-content{
+      width:100%;
+    }
 }

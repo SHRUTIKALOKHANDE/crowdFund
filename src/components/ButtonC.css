@@ -1,0 +1,10 @@
+.ant-btn-primary.buttonClass{
+    background: hsl(176, 50%, 47%);
+    border-color:hsl(176, 50%, 47%);
+}
+
+.ant-btn-primary.buttonClass:hover {
+    background: darkcyan;
+    border-color: darkcyan;
+}
+

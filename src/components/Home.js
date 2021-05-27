@@ -1,62 +1,79 @@
-import React from "react";
-import { withRouter } from "react-router";
-import data from "../data/data";
-import "./Home.css";
-import Header from "./Header";
-import ParentCard from "./ParentCard";
-import Bookmark from "./Bookmark";
-import ProgressC from "./Progress";
-import Model from "./Model";
-import { Col } from "antd";
+import React from 'react';
+import { withRouter } from 'react-router';
+import data from '../data/data';
+import './Home.css';
+import Header from './Header';
+import ParentCard from './ParentCard';
+import Bookmark from './Bookmark';
+import ProgressC from './Progress';
+//import Model from "./Model";
+import { Col } from 'antd';
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.infos = data;
-    this.projectDetails = {
-      backed: 89914,
-      total_backers: 5007,
-      days_left: 56,
-    };
-    this.state = {
-      setVisible: false,
-      visible: true,
-    };
-  }
-  handleClick = () => {
-    this.setState({
-      setVisible: true,
-    });
-    console.log("Button clicked", this.state.visible);
-  };
+	constructor(props) {
+		super(props);
+		this.infos = data;
+		this.projectDetails = {
+			backed: 89914,
+			total_backers: 5007,
+			days_left: 56,
+		};
+		this.state = {
+			setVisible: false,
+			visible: false,
+			projectDetails: this.projectDetails,
+		};
+	}
 
-  hideModal = () => this.setState({ visible: false });
+	showModal = () => {
+		this.setState({
+			visible: true,
+		});
+		console.log('showModal', this.state.visible);
+	};
 
-  getElement = (info) => {
-    return <Model history={this.props.push} info={info} />;
-  };
+	onContinue = (info) => {
+		console.log(info);
 
-  render() {
-    return (
-      <>
-        <div className="home-container">
-          <Header />
-        </div>
-        <Col xs={24} xl={24}>
-          <div className = "home-content">
-            <Bookmark />
-            <ProgressC projectDetails={this.projectDetails} />
-            <ParentCard handleClick={this.handleClick} />
-          </div>
-        </Col>
-        {/* <div className="home-modal">
-          {this.infos.map((info) => this.getElement(info))}
-        </div>
-        <div>
-          {this.state.setVisible && <ModalC visible={this.state.visible} />}
-        </div> */}
-      </>
-    );
-  }
+		if (info) {
+			let project_Details = this.projectDetails;
+			project_Details.backed = project_Details.backed + parseInt(info.cost);
+			project_Details.total_backers = project_Details.total_backers + 1;
+			console.log('Project_Details', project_Details);
+
+			this.setState({
+				visible: false,
+				projectDetails: project_Details,
+			});
+
+			console.log(this.state.projectDetails);
+			return <ProgressC projectDetails={this.state.projectDetails} />;
+		}
+	};
+
+	render() {
+		return (
+			<>
+				<div className="home-container">
+					<Header history={this.props.push} />
+				</div>
+				<Col xs={24} xl={24}>
+					<div className="home-content">
+						<Bookmark
+							visible={this.state.visible}
+							showModal={this.showModal}
+							onContinue={this.onContinue}
+						/>
+						<ProgressC projectDetails={this.projectDetails} />
+						<ParentCard
+							visible={this.state.visible}
+							showModal={this.showModal}
+							onContinue={this.onContinue}
+						/>
+					</div>
+				</Col>
+			</>
+		);
+	}
 }
 
 export default withRouter(Home);

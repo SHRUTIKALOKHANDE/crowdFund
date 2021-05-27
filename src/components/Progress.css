@@ -1,45 +1,60 @@
-.progress-container {
+.ant-card.ant-card-bordered.progress-container {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 30vh;
-  margin-top: 20px;
-  padding: 0.5em 0em;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
-  background: white;
+  margin-bottom: 1.5em;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); 
 }
 .progress-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 0.5em 0.8em;
-  padding: 0em 0.75em;
-  overflow: hidden;
-  width: 90%;
+  flex-direction: column; 
+  /* margin-top:-20%;  */
+  height:100%;
+  width: 100%;
 }
 .progress-outer {
   display: flex;
   flex-direction: row;
-  justify-content: stretch;
-  align-items: center;
-  height: 14vh;
+  justify-content: center;
+  align-items: center; 
+  height: 100%;
   width: 100%;
-  border: none;
-  margin: 0em 1em;
+  margin:2em 0em 2em 0em;
 }
 .progress-inner {
+  justify-content: center; 
+  align-items: center;
+  height: auto;
+  width:auto;
+  padding:0em 2em; 
   text-align: left;
-  height: 8vh;
-  width: 100%;
-  padding: 1em 3em;
 }
-.progress-bar {
+.hr{
+  transform:rotate(90deg);
+  color:whitesmoke;
+  width: 60px;
+}
+.progress-bar{
   display: flex;
-  justify-content: center;
-  width: 82%;
-  padding: 2em 1em;
+  width: 90%;
+}
+
+@media screen and (max-width:480px){
+  .progress-outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    width: 100%;
+  } 
+  .hr{
+    transform:rotate(0deg);
+    color:whitesmoke;
+    width: 100px;
+  }
 }

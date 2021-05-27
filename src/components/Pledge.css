@@ -3,19 +3,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 1em 1em;
-  padding: 0.5em 1em;
   overflow: hidden;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
   height: auto;
-  width: 90%;
 }
 .pledge-title {
   display: flex;
   justify-content: space-between;
+  /* flex-direction: column; */
   width: 94%;
   font-size: 20px;
-  padding: 1em 1em;
+  padding: 1em 0em;
 }
 .pledge-content {
   font-size: 0.9em;
@@ -25,7 +22,8 @@
 }
 .pledge-button {
   display: flex;
+  /* flex-direction: column; */
   justify-content: space-between;
   width: 94%;
-  padding: 1em 1em;
+  padding: 1em 0em; 
 }

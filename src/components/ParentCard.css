@@ -1,40 +1,21 @@
-.card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow:hidden;
-  align-items: center;
-  width: 100%;
-  min-height: calc(100vh - 170px);
-  margin-top: 20px;
-  padding: 1.5em 0em;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
-  background: white;
-}
-
 .parentcard-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1em 1em;
-  height: auto;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 .title {
-  width: 80%;
-  font-weight: 300;
-  font-size: 20px;
+  width: fit-content; 
+  font-weight: 400;
+  font-size: 24px;
   text-align: left;
-  margin-top: -1em;
-  padding: 1em;
 }
-
 .content {
-  width: 94%;
+  width: 100%;
   color: darkgray;
   text-align: justify;
   font-size: 16px;
-  padding: 1em;
+  margin-top: 1em;
 }

@@ -1,5 +1,11 @@
 let data = [
     {
+        id:0,
+        title:"Pledge with no reward",
+        content:"Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."
+
+    },
+    {
         id:1,
         title: "Bamboo Stand",
         pledge: "Pledge $25 or more",
