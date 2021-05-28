@@ -2,11 +2,10 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import data from '../data/data';
 import './Home.css';
-import Header from './Header';
+import NavBar from'./NavBar';
 import ParentCard from './ParentCard';
 import Bookmark from './Bookmark';
 import ProgressC from './Progress';
-//import Model from "./Model";
 import { Col } from 'antd';
 class Home extends React.Component {
 	constructor(props) {
@@ -54,7 +53,7 @@ class Home extends React.Component {
 		return (
 			<>
 				<div className="home-container">
-					<Header history={this.props.push} />
+					<NavBar history={this.props.push} />
 				</div>
 				<Col xs={24} xl={24}>
 					<div className="home-content">
