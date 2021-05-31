@@ -9,10 +9,19 @@
 .pledge-title {
   display: flex;
   justify-content: space-between;
-  /* flex-direction: column; */
   width: 94%;
   font-size: 20px;
   padding: 1em 0em;
+}
+.pledge-heading{
+  font-size: 20px;
+	font-weight: 500;
+}
+.pledge-subheading{
+  color: hsl(176, 50%, 50%);
+  font-size: 16px;
+  font-weight: 200;
+  cursor: pointer;
 }
 .pledge-content {
   font-size: 0.9em;
@@ -22,8 +31,37 @@
 }
 .pledge-button {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   width: 94%;
   padding: 1em 0em; 
+}
+.pledge-left{
+  font-size: 20px;
+	font-weight: 500;
+}
+
+@media screen and (max-width:480px){
+  .pledge-title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; 
+    font-size: 20px;
+    padding: 0em 0em 1em 0em; 
+  }
+  .pledge-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0em 0em 1em 0em; 
+  }
+  .pledge-heading{
+    font-size: 20px;
+	  font-weight: 500;
+    padding-bottom: 0.5em;
+  }
+  .pledge-left{
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 0.5em;
+  }
 }

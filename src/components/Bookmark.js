@@ -2,15 +2,14 @@ import React from 'react';
 import { Card, Modal } from 'antd';
 import ButtonC from './ButtonC';
 import './Bookmark.css';
-import Model from './Model';
-import data from '../data/data';
+import ModelCard from './ModelCard';
 
 class Bookmark extends React.Component {
 	constructor(props) {
 		super(props);
-		this.infos = data;
 		this.state = {
-			clicked: false,
+			isBookmark: false,
+			selectedPledgeId:0,
 		};
 	}
 
@@ -26,22 +25,30 @@ class Bookmark extends React.Component {
 	};
 
 	addBookmark = () => {
+		let check = !this.state.isBookmark;
 		this.setState({
-			clicked: true,
+			isBookmark: check,
 		});
 	};
 
+	onPledgeCardChange = (id) => {
+		this.setState({
+		  selectedPledgeId: id,
+		});
+	  };
+
 	render() {
+		let styles={backgroundColor:'darkcyan'};
 		return (
 			<>
 				<Card className="bookmark-container">
 					<img className="mastercraft-icon" src="logo-mastercraft.svg" alt="mastercraft-icon" />
 					<div className="bookmark-content">
-						<div className="title">Mastercraft Bamboo Monitor Riser</div>
+						<h2 className="title">Mastercraft Bamboo Monitor Riser</h2>
 
-						<div className="subtitle">
+						<h4 className="subtitle">
 							A beautiful & handcrafted monitor stand to reduce neck and eye strain.
-						</div>
+						</h4>
 
 						<div className="bookmark">
 							<div>
@@ -50,21 +57,29 @@ class Bookmark extends React.Component {
 
 							<div className="bookmark-btn" onClick={this.addBookmark}>
 								<img
-									className={this.state.clicked ? 'bookmark-iconhover' : 'bookmark-icon'}
+									className='bookmark-icon'
+									style={this.state.isBookmark ? {styles} : {}}
+									// className={this.state.isBookmark ? 'bookmark-iconhover' : 'bookmark-icon'}
 									src="icon-bookmark.svg"
 									alt="Bookmark-icon"
 								/>
 
-								<div className={this.state.clicked ? 'bookmark-titlehover' : 'bookmark-title'}>
-									{' '}
-									Bookmark{' '}
+								<div className={this.state.isBookmark ? 'bookmark-titlehover' : 'bookmark-title'}>
+									Bookmark
 								</div>
 							</div>
 						</div>
 					</div>
 				</Card>
-				<Modal title={this.getTitle()} visible={this.props.visible} centered={true} footer={null} width={600}>
-					<Model infos={this.infos} onContinue={this.props.onContinue} />
+				<Modal title={this.getTitle()} visible={this.props.visible} onCancel={this.props.closeModal} centered={true} footer={null} width={600}>
+					{this.props.infos.map((info, idx) => (
+						<ModelCard 
+						data={info}
+						selectedPledgeId={this.state.selectedPledgeId}
+						onPledgeCardChange={this.onPledgeCardChange}
+						onContinue={this.props.onContinue}
+						/>
+					))}
 				</Modal>
 			</>
 		);

@@ -9,35 +9,18 @@ class Pledge extends React.Component {
 			<Card style={{ margin: '1em 0em' }}>
 				<div className="pledge-container">
 					<div className="pledge-title">
-						<div
-							style={{
-								fontSize: '20px',
-								fontWeight: '500',
-							}}
-						>
+						<div className = "pledge-heading">
 							{this.props.info.title}
 						</div>
-						<div
-							style={{
-								color: 'hsl(176, 50%, 50%)',
-								fontSize: '16px',
-								fontWeight: '200',
-								cursor: 'pointer',
-							}}
-						>
+						<div className = "pledge-subheading">
 							{this.props.info.pledge}
 						</div>
 					</div>
 					<div className="pledge-content">{this.props.info.content}</div>
 					<div className="pledge-button">
-						<div
-							style={{
-								fontSize: '20px',
-								fontWeight: '500',
-							}}
-						>
+						<div className="pledge-left">
 							{this.props.info.left}
-							<span
+							<span 
 								style={{
 									color: 'darkgray',
 									paddingLeft: '5px',
@@ -48,15 +31,11 @@ class Pledge extends React.Component {
 							</span>
 						</div>
 						<div>
-							{this.props.disabled ? (
-								<ButtonC
-									name={this.props.info.bname}
-									handleClick={this.props.onClick}
-									disabled={true}
-								/>
-							) : (
-								<ButtonC name={this.props.info.bname} onClick={this.props.onClick} />
-							)}
+							<ButtonC
+								name={this.props.info.bname}
+								onClick={() => this.props.onClick(this.props.info.id)}
+								disabled={this.props.disabled}
+							/>
 						</div>
 					</div>
 				</div>

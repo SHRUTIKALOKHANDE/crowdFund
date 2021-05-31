@@ -4,29 +4,24 @@ import './ButtonC.css';
 
 class ButtonC extends React.Component {
 	render() {
+		const styles = {
+			background: 'darkgrey',
+			border: 'hsl(176, 50%, 47%)',
+			borderRadius: '2em',
+			color: 'white',
+		};
 		return (
 			<div>
-				{this.props.disabled ? (
-					<Button
-						shape="round"
-						type="primary"
-						className="buttonClass"
-						style={{
-							background: 'darkgrey',
-							border: 'hsl(176, 50%, 47%)',
-							borderRadius: '2em',
-							color: 'white',
-						}}
-						disabled={true}
-						onClick={this.props.onClick}
-					>
+				<Button
+					shape="round"
+					type="primary"
+					className="buttonClass"
+					style={this.props.disabled ? {styles} : {}}
+					disabled={this.props.disabled}
+					onClick={this.props.onClick}
+				>
 						{this.props.name}
-					</Button>
-				) : (
-					<Button shape="round" type="primary" className="buttonClass" onClick={this.props.onClick}>
-						{this.props.name}
-					</Button>
-				)}
+				</Button>
 			</div>
 		);
 	}

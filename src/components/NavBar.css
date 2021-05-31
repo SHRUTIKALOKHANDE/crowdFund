@@ -1,6 +1,6 @@
 .NavbarItems {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     font-size: 1.5vw;
@@ -44,41 +44,53 @@
 .menu-icon {
   display:none;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 480px) {
   .NavbarItems{
     position:relative;
+    /* background-color: white; */
+    width:100%;
+  }
+  .navbar-menu-list{
+    display:block;
+    position: absolute;
+    top:0;
+    right:0;
+    transform: translate(0%,20%); 
+    width:100%;
   }
   .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width:100%;
-    height: 5vh;
-    list-style: none;
-    position: absolute;
-    top:80px;
-    left:-100%;
-    opacity: 1;
-    transition:all 0.2s ease;
+    display: none;
   }
   .nav-menu-active {
-    left:0;
+    background-color: white;  
+    border: 1px solid white;
+    border-radius: 3em;
+    width:70%;
+    top:0;
+    right:0;
     opacity:1;
+    transform: translate(22%,0%);
     transition:all 0.2s ease;
     z-index: 1;
     list-style: none;
-
   }
   .nav-links {
     text-align:center;
-    padding:1vw;
+    padding:1em;
+    top:0;
+    right:0;
+    transform: translate(-10%,0%);
     width:100%;
     display:table;
-    font-size: 2vw;
+    font-size: 2em;
+    font-weight: 600;
+    border-bottom: 1px solid whitesmoke;
+    color:black;
   }
   .nav-links:hover{
-    background-color: white;
     color:blue;
-    font-size: 2.5vw;
+    font-size: 2.5em;
+    font-weight: 800;
   }
   .navbar-logo{
     position:absolute;
@@ -91,27 +103,25 @@
     position:absolute;
     top:0;
     right:0;
-    transform: translate(-100%,60%);
+    transform: translate(-100%,20%);
     font-size: 4vw;
     cursor: pointer;
     color:white;
   }
   .fa-times{
-    color:white;
+    position:absolute;
     font-size: 4vw;
     top:0;
     right:0;
-    transform: translate(-100%,0%);
+    transform: translate(-100%,-40%);
   }
   .nav-links-mobile{
-    background-color: white;
     display:block;
     width:80%;
     text-align: center;
     padding:1.5vw;
     margin:auto;
     font-size:3vw;
-    color:black;
   }
 }
   

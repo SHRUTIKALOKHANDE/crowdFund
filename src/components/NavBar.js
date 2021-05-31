@@ -7,10 +7,7 @@ class NavBar extends React.Component {
             clicked:false,
         }
     }
-    root = () => {
-		this.props.history.push('/');
-        
-	};
+    
     handleClick = () => {
         this.setState({
             clicked:!this.state.clicked,
@@ -22,20 +19,22 @@ class NavBar extends React.Component {
 				<div className="navbar-logo" onClick={this.root}>
 					<img src="logo.svg" alt="Crowdfund-icon"></img>
 				</div>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
-                </div>
-                <ul className={this.state.clicked ? "nav-menu-active" : "nav-menu"}>
-                    <li>
-                        <a className = "nav-links" href={this.root}>About</a>
-                    </li>
-                    <li>
-                        <a className = "nav-links" href={this.root}>Discover</a>
+                <div className="navbar-menu-list">
+                    <div className="menu-icon" onClick={this.handleClick}>
+                        <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
+                    </div>
+                    <ul className={this.state.clicked ? "nav-menu-active" : "nav-menu"}>
+                        <li>
+                            <a className = "nav-links" href="/">About</a>
                         </li>
-                    <li>
-                        <a className = "nav-links" href={this.root}>Get Started</a>
-                    </li>
-                </ul>
+                        <li>
+                            <a className = "nav-links" href="/">Discover</a>
+                            </li>
+                        <li>
+                            <a className = "nav-links" href="/">Get Started</a>
+                        </li>
+                    </ul>
+                </div>
 			</nav>
 		);
 	}

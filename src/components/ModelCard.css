@@ -63,6 +63,27 @@
     margin-bottom: 2em;
 }
 
+.thanks-check-icon {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    margin-bottom: 1.5rem;
+}
+.thanks-content {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    color:darkgray;
+    text-align: center;
+}
+.thanks-btn {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    margin-top: 1.5rem;
+}
+
+
 @media screen and (max-width: 
   768px){
     .pcard-title{
