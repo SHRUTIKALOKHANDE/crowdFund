@@ -1,3 +1,42 @@
+## Frontend Mentor - Crowdfunding product page
+Here are the some screenshots
+
+#Homepage / Landingpage
+
+![active-states-bookmarked](https://user-images.githubusercontent.com/30066889/120340064-4e46f480-c313-11eb-86b2-269e4d001320.jpg)
+
+#Taking Pledge 
+- active_states_modal_default_view
+
+![active-states-modal-default](https://user-images.githubusercontent.com/30066889/120340591-cdd4c380-c313-11eb-9704-9251d32c254e.jpg)
+
+- active_states_modal_selected_view
+
+![active-states-modal-selected](https://user-images.githubusercontent.com/30066889/120340899-0a082400-c314-11eb-95a6-4da19183ec7d.jpg)
+
+#Thanks
+
+![active-states-modal-completed](https://user-images.githubusercontent.com/30066889/120341170-48054800-c314-11eb-9c74-e332d129159f.jpg)
+
+##Features
+
+-View the optimal layout depending on their device's screen size
+
+-See hover states for interactive elements
+
+-Make a selection of which pledge to make
+
+-See an updated progress bar and total money raised based on their pledge total after confirming a pledge
+
+-See the number of total backers increment by one after confirming a pledge
+
+-Toggle whether or not the product is bookmarked
+
+##Possible Improvements
+
+-Preserve user pledges using localStorage.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
