@@ -3,74 +3,59 @@ import { Card, Progress } from 'antd';
 import './Progress.css';
 
 class ProgressC extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			percent:0,
+		};
+	};
+
+	getPercent = () => {
+		let result = Math.floor(this.props.projectDetails.backed/1000)
+		// this.setState({
+		// 	percent:result,
+		// },console.log(this.state.percent)); 
+		return result;
+	};
+
 	render() {
+		console.log(this.getPercent());
 		return (
 			<Card className="progress-container">
 				<div className="progress-content">
 					<div className="progress-outer">
 						<div className="progress-inner">
-							<div
-								style={{
-									fontSize: '24px',
-									fontWeight: '600',
-								}}
-							>
+							<h1>
 								${this.props.projectDetails.backed}
-							</div>
-							<div
-								style={{
-									fontSize: '12px',
-									fontWeight: '100',
-									color: 'darkgray',
-								}}
-							>
+							</h1>
+							<h4 style={{ color: 'darkgray' }}>
 								of $100,000 backed
-							</div>
+							</h4>
 						</div>
 						<hr className="hr" />
 						<div className="progress-inner">
-							<div
-								style={{
-									fontSize: '24px',
-									fontWeight: '600',
-								}}
-							>
+							<h1>
 								{this.props.projectDetails.total_backers}
-							</div>
-							<div
-								style={{
-									fontSize: '12px',
-									fontWeight: '100',
-									color: 'darkgray',
-								}}
-							>
+							</h1>
+							<h4
+								style={{ color: 'darkgray' }}>
 								total backers
-							</div>
+							</h4>
 						</div>
 						<hr className="hr" />
 						<div className="progress-inner">
-							<div
-								style={{
-									fontSize: '24px',
-									fontWeight: '600',
-								}}
-							>
+							<h1>
 								{this.props.projectDetails.days_left}
-							</div>
-							<div
-								style={{
-									fontSize: '12px',
-									fontWeight: '100',
-									color: 'darkgray',
-								}}
-							>
+							</h1>
+							<h4
+								style={{ color: 'darkgray'}}>
 								days left
-							</div>
+							</h4>
 						</div>
 					</div>
 					<div className="progress-bar">
 						<Progress
-							percent={70}
+							percent={this.getPercent()}
 							status="active"
 							showInfo={false}
 							strokeColor={{

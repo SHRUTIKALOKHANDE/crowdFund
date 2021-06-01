@@ -30,13 +30,13 @@
   align-items: center;
   height: auto;
   width:auto;
-  padding:0em 2em; 
-  text-align: left;
+  padding:0em 1em; 
+  text-align: center;
 }
 .hr{
   transform:rotate(90deg);
   color:whitesmoke;
-  width: 60px;
+  width: 100px;
 }
 .progress-bar{
   display: flex;

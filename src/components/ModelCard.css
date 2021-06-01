@@ -7,6 +7,9 @@
     height: auto;
     width:100%;
 }
+.shadow{
+    border: 1px solid darkcyan;
+}
 .pcard-title{
     display: flex;
     justify-content: space-between;
@@ -16,12 +19,17 @@
     margin-top: -2.3em;
     margin-left:1em;
 }
+.pcard-heading{
+    margin-left:-1em;
+}
+.pcard-heading:hover{
+    color:hsl(176, 50%, 50%);
+}
 .pcard-pledge{
     color: hsl(176, 50%, 50%);
     font-size: 16px;
     font-weight: 200;
     cursor: pointer;
-    /* margin-left: 1em; */
 }
 .pcard-content{
     font-size: 0.90em;
@@ -61,6 +69,15 @@
 
 .ant-card.ant-card-bordered.pcard-container{
     margin-bottom: 2em;
+}
+
+.ant-card.ant-card-bordered.shadow{
+    border:1px solid rgba(39, 247, 247, 0.5);
+    box-shadow: 0px 0px 5px 0px rgba(39, 247, 247, 0.5);    
+}
+.input.ant-radio-input{
+    color:black;
+    background-color: black;
 }
 
 .thanks-check-icon {

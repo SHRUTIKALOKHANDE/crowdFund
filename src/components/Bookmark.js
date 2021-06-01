@@ -3,6 +3,8 @@ import { Card, Modal } from 'antd';
 import ButtonC from './ButtonC';
 import './Bookmark.css';
 import ModelCard from './ModelCard';
+import bookmarked from '../images/icon-bookmark-green.svg';
+import notBookmarked from '../images/icon-bookmark.svg';
 
 class Bookmark extends React.Component {
 	constructor(props) {
@@ -38,7 +40,6 @@ class Bookmark extends React.Component {
 	  };
 
 	render() {
-		let styles={backgroundColor:'darkcyan'};
 		return (
 			<>
 				<Card className="bookmark-container">
@@ -58,9 +59,7 @@ class Bookmark extends React.Component {
 							<div className="bookmark-btn" onClick={this.addBookmark}>
 								<img
 									className='bookmark-icon'
-									style={this.state.isBookmark ? {styles} : {}}
-									// className={this.state.isBookmark ? 'bookmark-iconhover' : 'bookmark-icon'}
-									src="icon-bookmark.svg"
+									src={this.state.isBookmark ? bookmarked : notBookmarked}
 									alt="Bookmark-icon"
 								/>
 

@@ -13,9 +13,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -10vh;
-    position: relative;
+    top: -15%;
+    left:46%;
+    position: absolute;
     margin:auto;
+    transform: transition(-50%,50%);
 }
 .bookmark-content {
     display: flex;
@@ -23,21 +25,16 @@
     justify-content: center;
     align-items: center;
     overflow:hidden;
-    height: 30vh;
+    height: 13em;
     width:100%;
-    margin-top: -10%;
 }
 .title{
-    /* font-size: 24px;
-    font-weight: 600; */
     text-align: center;
     padding: 0em 0em;
     margin-bottom: 0em;
 }
 .subtitle{
     color:darkgrey;
-    /* font-size: 18px;
-    font-weight: 200; */
     text-align: center;
     padding-bottom: 1em;
 }
@@ -60,7 +57,7 @@
     border-radius: 5em;
     overflow: hidden;
     cursor:pointer;
-    height: 6vh;
+    height: 2.5em;
     width:10em;
 }
 
@@ -102,4 +99,33 @@
     background-color:transparent;
     border:none;
     color:darkcyan;
+}
+@media screen and (max-width:480px) {
+.bookmark-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1px white;
+    opacity:1;
+}
+.bookmark-icon{
+    border-radius: 5em;
+    height: 100%;
+    cursor:pointer;
+    margin-left:2.5em;
+}
+.bookmark-iconhover{
+    color:darkcyan;
+    border-radius: 5em;
+    height: 100%;
+    cursor:pointer;
+    /* margin-left:-2.5em; */
+}
+.bookmark-title{
+    display: none;
+}
+.bookmark-titlehover{
+    display:none;
+}
 }

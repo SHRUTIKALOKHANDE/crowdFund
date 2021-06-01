@@ -44,7 +44,7 @@ class ModelCard extends React.Component {
 		console.log(this.state.selectedPledgeId, this.props.data);
 		return (
 			<>
-			<Card className="pcard-container">
+			<Card className={isSelected ? "pcard-container shadow" : "pcard-container"}>
 				<Radio
 					autoFocus={true}
 					value={this.props.data.id}
@@ -54,10 +54,8 @@ class ModelCard extends React.Component {
 					disabled={disabled}
 				>
 					<div className="pcard-title">
-						<div style={{ fontSize: '18px', fontWeight: '500', marginLeft: '-1em' }}>
-							{this.props.data.title}
-						</div>
-						<div className="pcard-pledge">{this.props.data.pledge}</div>
+						<h4 className="pcard-heading">{this.props.data.title}</h4>
+						<h6 className="pcard-pledge">{this.props.data.pledge}</h6>
 
 						{this.props.data.id === 0 ? (
 							''
